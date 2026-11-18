@@ -1,0 +1,41 @@
+:root{
+  --bg:#080a12; --panel:#0e1220; --panel-2:#131828; --line:#232a3d;
+  --ink:#e8ecff; --muted:#8b95b3; --accent:#f472b6; --danger:#ff6b81;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink); height:100dvh; display:flex; flex-direction:column;
+  font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+.bar{
+  display:flex; align-items:center; gap:12px; padding:10px 14px; flex-wrap:wrap;
+  background:linear-gradient(180deg,#0d1220,#0a0e18); border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:9px; font-weight:650}
+.brand img{border-radius:8px}
+.tools{display:flex; gap:8px; margin-left:auto}
+button{font:inherit; color:inherit; background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:8px 13px; cursor:pointer; white-space:nowrap}
+button:hover{border-color:#39425e}
+button.primary{background:var(--accent); border-color:var(--accent); color:#1a0a14; font-weight:650}
+button.primary:hover{filter:brightness(1.08)}
+button.danger{color:var(--danger); border-color:#43202b}
+button.danger:hover{background:#2a1119}
+main{flex:1; min-height:0; overflow:auto; padding:16px; display:flex; flex-direction:column; gap:14px}
+.card{border:1px solid var(--line); background:var(--panel); border-radius:16px; padding:16px 18px}
+.card h2{margin:0 0 6px; font-size:15.5px; letter-spacing:.01em}
+.lede{margin:0 0 12px; color:var(--muted); font-size:13.5px; max-width:70ch}
+code{background:#141a2b; border:1px solid var(--line); border-radius:6px; padding:1px 5px; font-size:12.5px}
+.keys{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
+.keys li{
+  display:flex; gap:10px; justify-content:space-between; align-items:baseline;
+  border:1px solid var(--line); background:#0b0f1a; border-radius:10px; padding:8px 11px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px;
+}
+.keys .size{color:var(--muted); font-size:11.5px; white-space:nowrap}
+.keys .app{color:var(--accent)}
+.total{margin:12px 0 0; color:var(--muted); font-size:12.5px}
+.empty{margin:0; color:var(--muted); font-size:13.5px}
+.row{display:flex; gap:8px; flex-wrap:wrap}
+.toast{position:fixed; left:50%; bottom:18px; transform:translateX(-50%); background:#1b2136; border:1px solid var(--line); border-radius:999px; padding:8px 16px; font-size:13px; box-shadow:0 8px 24px #0008}
+[hidden]{display:none!important}

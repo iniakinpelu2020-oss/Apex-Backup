@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Apex Backup</title>
+<meta name="description" content="Export and restore every Apex app's local data as one JSON file.">
+<meta name="theme-color" content="#080a12">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand">
+    <img src="./icons/icon-192.png" alt="" width="28" height="28">
+    <span>Apex Backup</span>
+  </div>
+  <div class="tools">
+    <button id="exportBtn" class="primary" type="button">Export backup</button>
+    <button id="importBtn" type="button">Restore</button>
+    <input id="file" type="file" accept="application/json,.json" hidden>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>What will be included</h2>
+    <p class="lede">Every key in this browser's <code>localStorage</code> that starts with <code>apex.</code>.
+      Nothing is uploaded &mdash; the file is built and saved on this device.</p>
+    <ul id="keyList" class="keys"></ul>
+    <p id="empty" class="empty" hidden>No Apex data found in this browser yet. Open an app and save something first.</p>
+    <p class="total" id="total"></p>
+  </section>
+
+  <section class="card">
+    <h2>Restore</h2>
+    <p class="lede">Restoring writes straight into <code>localStorage</code>. Existing keys with the same name are
+      replaced, so export first if you are not sure.</p>
+    <div class="row">
+      <button id="importBtn2" class="primary" type="button">Choose a backup file</button>
+      <button id="wipeBtn" class="danger" type="button">Clear all Apex data</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Scope</h2>
+    <p class="lede">This covers <code>localStorage</code> only. Photos and files held in IndexedDB (Apex Camera,
+      Apex Gallery) are not included, and nothing from another browser profile is reachable from here.</p>
+  </section>
+</main>
+
+<div class="toast" id="toast" hidden></div>
+<script src="./app.js"></script>
+</body>
+</html>
